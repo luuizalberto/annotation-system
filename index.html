@@ -20,6 +20,16 @@
             $('.btn-add').click(function(){
                 var el = '<div class="anotacao-single"><textarea name="" placeholder="Sua nova anotação..."></textarea></div>'
                 $('.container-anotacoes').append(el)
+
+                var textArea = $('.anotacao-single').last().find('textarea') // aqui estou pegando meu ultimo elemento
+
+                var date = new Date() // criando um obj para armazenar a hora
+                var hora = date.getHours()
+                var minuto = date.getMinutes()
+
+                var finalTime = hora+":"+minuto
+
+                textArea.html("Nova anotação às "+finalTime)
             })
         })
     </script>
